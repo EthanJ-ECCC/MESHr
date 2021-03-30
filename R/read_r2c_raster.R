@@ -122,7 +122,7 @@ read_r2c_raster <- function(r2cFile, NAvalue = NULL, as_rts = FALSE, timezone = 
     
     # read in as text connection
     con <- textConnection(frame_lines)
-    frame_vals <- scan(con, what = "numeric")
+    frame_vals <- scan(con, what = "numeric", quiet = TRUE)
     close(con)
     # convert values to a matrix and flip vertically
     frame_vals <- as.numeric(frame_vals)
